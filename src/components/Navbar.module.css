@@ -1,111 +1,171 @@
+/* Floating Glassmorphism Dock */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    width: 100%;
-    /* Remove max-width on the container itself to allow full width background */
-    /* max-width: 1200px; */
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: auto;
+    max-width: 90vw;
+    padding: 0.75rem 1.5rem;
+
+    background: rgba(20, 20, 25, 0.4);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
-/* Create a new inner container to constrain content width */
 .navContainer {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 20;
+    gap: 2rem;
+    width: 100%;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--foreground);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-right: 1rem;
+    display: none;
+    /* Hiding logo for pure dock look as per common dock designs, or strictly text */
+}
+
+/* Ideally we show logo on mobile or just keep it minimal */
+@media (min-width: 768px) {
+    .logo {
+        display: block;
+    }
 }
 
 .links {
     display: flex;
-    gap: 2rem;
+    gap: 0.5rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .link {
-    color: var(--secondary);
-    font-size: 1rem;
-    transition: color 0.2s;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .link:hover,
-.active {
-    color: var(--foreground);
+.link.active {
+    color: #fff;
+    background: rgba(0, 242, 170, 0.1);
+    /* Cyan tint */
+    box-shadow: 0 0 20px rgba(0, 242, 170, 0.2);
+    /* Cyan glow */
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px rgba(0, 242, 170, 0.4);
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00f2aa, transparent);
+    /* Neon Cyan */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.link:hover::after,
+.link.active::after {
+    width: 60%;
 }
 
 .mobileMenuBtn {
     display: none;
     background: none;
     border: none;
-    color: var(--foreground);
+    color: #fff;
     font-size: 1.5rem;
     cursor: pointer;
-    z-index: 20;
 }
 
 .mobileMenu {
     display: none;
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem;
+        top: auto;
+        bottom: 2rem;
+        /* Bottom dock on mobile usually easiest */
+        width: 85%;
+        justify-content: space-between;
+        padding: 0.8rem 1.5rem;
     }
 
     .links {
         display: none;
+        /* Hide default links, use mobile menu overlay or different structure */
     }
 
     .mobileMenuBtn {
         display: block;
     }
 
+    /* When menu is open, maybe expand usage? Or full screen overlay */
     .mobileMenu {
+        position: fixed;
+        bottom: 6rem;
+        /* Above the dock */
+        left: 50%;
+        transform: translateX(-50%) scale(0.9);
+        width: 85%;
+        background: rgba(20, 20, 25, 0.8);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: var(--background);
-        z-index: 15;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
+        gap: 1rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
     }
 
     .mobileMenu.open {
-        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) scale(1);
     }
 
     .mobileLink {
-        font-size: 1.5rem;
-        color: var(--secondary);
+        color: #fff;
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 0.8rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
     }
 
     .mobileLink:hover {
-        color: var(--foreground);
+        background: rgba(255, 120, 30, 0.2);
     }
 }

@@ -26,23 +26,42 @@
 }
 
 .greeting {
+  font-family: var(--font-geist-mono);
   font-size: 1.2rem;
-  color: #ff0080;
+  color: #00f2aa;
+  /* Neon Cyan */
   margin-bottom: 1rem;
   display: block;
   font-weight: 500;
+  letter-spacing: 0.1em;
 }
 
 .title {
-  font-size: 5rem;
-  font-weight: 800;
+  font-family: var(--font-geist-mono);
+  font-size: 4.5rem;
+  /* Slightly smaller for mono to fit nicely */
+  font-weight: 700;
   margin-bottom: 1.5rem;
-  line-height: 1.1;
-  background: linear-gradient(to right, #ffffff, #aaaaaa);
+  line-height: 1.2;
+
+  /* Metallic Silver/Blue Gradient */
+  background: linear-gradient(to right, #e0eafc, #81a5c6, #a8edea);
+  background-size: 200% auto;
+
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: -0.02em;
+
+  animation: shine 8s linear infinite;
+  text-shadow: 0 0 20px rgba(0, 242, 170, 0.3);
+  /* Cyan Glow */
+  letter-spacing: -0.05em;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 .subtitle {
