@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/Navbar";
 import StardustBackground from "@/components/StardustBackground";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default function RootLayout({
   children,
@@ -31,6 +32,7 @@ export default function RootLayout({
         <StardustBackground />
         <Navbar />
         {children}
+        <GoogleAnalytics gaId="G-5MMC2NPX1T" />
       </body>
     </html>
   );
