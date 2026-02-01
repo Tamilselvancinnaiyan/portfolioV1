@@ -17,31 +17,30 @@ export default function Navbar() {
 
     return (
         <nav className={styles.navbar}>
-            <Link href="/" className={styles.logo}>
-                TS
-            </Link>
+            <div className={styles.navContainer}>
+                <Link href="/" className={styles.logo}>
+                    {/* Add your logo here */}
+                </Link>
 
-            {/* Desktop Menu */}
-            <ul className={styles.links}>
-                {navItems.map((item) => (
-                    <li key={item.name}>
-                        <Link href={item.href} className={styles.link}>
-                            {item.name}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+                <ul className={styles.links}>
+                    {navItems.map((item) => (
+                        <li key={item.name}>
+                            <Link href={item.href} className={styles.link}>
+                                {item.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
 
-            {/* Mobile Menu Button */}
-            <button
-                className={styles.mobileMenuBtn}
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label="Toggle menu"
-            >
-                {isOpen ? "✕" : "☰"}
-            </button>
+                <button
+                    className={styles.mobileMenuBtn}
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle menu"
+                >
+                    {isOpen ? "✕" : "☰"}
+                </button>
+            </div>
 
-            {/* Mobile Menu Overlay */}
             <div className={`${styles.mobileMenu} ${isOpen ? styles.open : ""}`}>
                 {navItems.map((item) => (
                     <Link
