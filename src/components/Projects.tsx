@@ -192,7 +192,7 @@ export default function Projects({ id }: { id: string }) {
             `}</style>
 
             <div className="header-centered">
-                <h2>Project <span>Archive</span></h2>
+                <h2>Personal <span>Projects</span></h2>
             </div>
 
             <div className="projects-column">
