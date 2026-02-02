@@ -4,12 +4,25 @@
 
 :root {
   /* --background: #0a0a0a; */
-  --foreground: #ededed;
-  --primary: #ededed;
-  --secondary: #888888;
-  --accent: #333333;
+  --foreground: #ffffff;
 
-  /* Gradients can be defined here if needed universally */
+  /* Atmospheric Sky Palette */
+  --sky-primary: #66a6ff;
+  --sky-cyan: #89f7fe;
+  --sky-light: #e0f7fa;
+
+  /* Semantic Tokens */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+
+  --glass-bg: rgba(0, 0, 0, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(137, 247, 254, 0.1);
+
+  --accent-color: var(--sky-cyan);
+  --accent-glow: rgba(137, 247, 254, 0.4);
+  --accent-gradient: linear-gradient(90deg, var(--sky-cyan), var(--sky-primary));
 }
 
 /* @media (prefers-color-scheme: dark) {

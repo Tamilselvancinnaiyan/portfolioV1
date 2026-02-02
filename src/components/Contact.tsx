@@ -8,7 +8,7 @@ const CONTACT_METHODS = [
         value: "tamilselvancinnaiyan@gmail.com",
         href: "mailto:tamilselvancinnaiyan@gmail.com",
         tag: "OFFICIAL",
-        color: "#ff0080", // Pink
+        color: "#89f7fe", // Sky Cyan
         icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     },
     {
@@ -55,7 +55,7 @@ export default function Contact({ id }: { id: string }) {
 
                 .header-area span {
                     color: transparent;
-                    -webkit-text-stroke: 1px #ff0080;
+                    -webkit-text-stroke: 1px var(--sky-cyan);
                 }
 
                 .command-center {
@@ -134,7 +134,7 @@ export default function Contact({ id }: { id: string }) {
 
                 .terminal-card:hover {
                     background: rgba(255, 255, 255, 0.05);
-                    border-color: #ff0080;
+                    border-color: var(--sky-cyan);
                     transform: translateX(10px);
                 }
 
@@ -190,7 +190,7 @@ export default function Contact({ id }: { id: string }) {
 
                 .terminal-card:hover .external-icon {
                     opacity: 1;
-                    color: #ff0080;
+                    color: var(--sky-cyan);
                     transform: translate(2px, -2px);
                 }
 

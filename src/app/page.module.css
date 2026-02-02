@@ -28,7 +28,7 @@
 .greeting {
   font-family: var(--font-geist-sans);
   font-size: 1.2rem;
-  color: #E0F7FA;
+  color: var(--sky-light);
   /* Pale Cloud Blue */
   margin-bottom: 1rem;
   display: block;
@@ -47,14 +47,14 @@
   line-height: 1.0;
 
   /* Atmospheric Sky Gradient */
-  background: linear-gradient(to right, #ffffff, #89f7fe, #66a6ff, #ffffff);
+  background: linear-gradient(to right, var(--foreground), var(--sky-cyan), var(--sky-primary), var(--foreground));
   background-size: 200% auto;
 
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  filter: drop-shadow(0 0 15px rgba(137, 247, 254, 0.4));
+  filter: drop-shadow(0 0 15px var(--accent-glow));
   /* Soft cloud glow */
   letter-spacing: 0.02em;
   /* More open */
@@ -95,7 +95,7 @@
 
 .primaryBtn {
   padding: 0.8rem 2rem;
-  background: linear-gradient(90deg, #ff0080 0%, #7928ca 100%);
+  background: var(--accent-gradient);
   color: white;
   border-radius: 8px;
   font-weight: 600;
@@ -107,7 +107,7 @@
 
 .primaryBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 0, 128, 0.3);
+  box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .secondaryBtn {

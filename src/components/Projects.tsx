@@ -49,7 +49,7 @@ export default function Projects({ id }: { id: string }) {
 
                 .header-centered span {
                     color: transparent;
-                    -webkit-text-stroke: 1px #ff0080;
+                    -webkit-text-stroke: 1px var(--sky-cyan);
                 }
 
                 .projects-column {
@@ -81,7 +81,7 @@ export default function Projects({ id }: { id: string }) {
                 }
 
                 .floating-card:hover .main-tile {
-                    border-color: rgba(255, 0, 128, 0.5);
+                    border-color: var(--sky-cyan);
                     background: rgba(0, 0, 0, 0.6);
                     transform: translateY(-5px);
                 }
@@ -105,13 +105,13 @@ export default function Projects({ id }: { id: string }) {
 
                 .floating-card:hover .side-panel {
                     transform: translateX(20px);
-                    border-color: #ff0080;
+                    border-color: var(--sky-cyan);
                     background: rgba(0, 0, 0, 0.5);
                 }
 
                 .p-id {
                     font-family: monospace;
-                    color: #ff0080;
+                    color: var(--sky-cyan);
                     font-weight: bold;
                     display: block;
                     margin-bottom: 10px;
@@ -169,8 +169,8 @@ export default function Projects({ id }: { id: string }) {
                 }
 
                 .link-item:hover {
-                    color: #ff0080;
-                    text-shadow: 0 0 10px rgba(255, 0, 128, 0.3);
+                    color: var(--sky-cyan);
+                    text-shadow: 0 0 10px var(--accent-glow);
                 }
 
                 .arrow-icon {

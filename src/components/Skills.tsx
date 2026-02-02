@@ -3,9 +3,9 @@
 import React from "react";
 
 export default function Skills({ id }: { id: string }) {
-    return (
-        <section id={id} className="skills-section">
-            <style>{`
+  return (
+    <section id={id} className="skills-section">
+      <style>{`
         .skills-section {
           padding: 100px 24px;
           max-width: 1100px;
@@ -29,7 +29,7 @@ export default function Skills({ id }: { id: string }) {
 
         .header-area span {
             color: transparent;
-            -webkit-text-stroke: 1px #ff0080;
+            -webkit-text-stroke: 1px var(--sky-cyan);
         }
 
         /* Bento Grid with Obsidian Glass */
@@ -54,7 +54,7 @@ export default function Skills({ id }: { id: string }) {
         }
 
         .bento-item:hover {
-          border-color: #ff0080;
+          border-color: var(--sky-cyan);
           background: rgba(0, 0, 0, 0.6);
           transform: translateY(-8px);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
@@ -89,7 +89,7 @@ export default function Skills({ id }: { id: string }) {
           display: block;
           line-height: 1;
           margin-bottom: 0.5rem;
-          background: linear-gradient(90deg, #ff0080, #7928ca);
+          background: var(--accent-gradient);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -119,64 +119,64 @@ export default function Skills({ id }: { id: string }) {
         }
       `}</style>
 
-            <div className="header-area">
-                <h2>Capabilities <span>& Tools</span></h2>
-            </div>
+      <div className="header-area">
+        <h2>Capabilities <span>& Tools</span></h2>
+      </div>
 
-            <div className="bento-grid">
-                {/* Box 1: Core Backend */}
-                <div className="bento-item large">
-                    <h3>Backend Mastery</h3>
-                    <div className="skill-chip">Node.js</div>
-                    <div className="skill-chip">Java</div>
-                    <div className="skill-chip">Python</div>
-                    <div className="skill-chip">Shell Scripting</div>
-                    <p className="description" style={{ marginTop: '20px' }}>
-                        Architecting scalable server-side systems with a focus on performance and isolated execution.
-                    </p>
-                </div>
+      <div className="bento-grid">
+        {/* Box 1: Core Backend */}
+        <div className="bento-item large">
+          <h3>Backend Mastery</h3>
+          <div className="skill-chip">Node.js</div>
+          <div className="skill-chip">Java</div>
+          <div className="skill-chip">Python</div>
+          <div className="skill-chip">Shell Scripting</div>
+          <p className="description" style={{ marginTop: '20px' }}>
+            Architecting scalable server-side systems with a focus on performance and isolated execution.
+          </p>
+        </div>
 
-                {/* Box 2: Experience Stat */}
-                <div className="bento-item tall" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                    <span className="stat-number">3+</span>
-                    <p style={{ fontWeight: '800', fontSize: '1.1rem', letterSpacing: '1px' }}>YEARS EXP</p>
-                    <p className="description">Full-Stack Dev</p>
-                </div>
+        {/* Box 2: Experience Stat */}
+        <div className="bento-item tall" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+          <span className="stat-number">3+</span>
+          <p style={{ fontWeight: '800', fontSize: '1.1rem', letterSpacing: '1px' }}>YEARS EXP</p>
+          <p className="description">Full-Stack Dev</p>
+        </div>
 
-                {/* Box 3: Databases */}
-                <div className="bento-item">
-                    <h3>Data</h3>
-                    <div className="skill-chip">PostgreSQL</div>
-                    <div className="skill-chip">NoSQL</div>
-                    <div className="skill-chip">Redis</div>
-                </div>
+        {/* Box 3: Databases */}
+        <div className="bento-item">
+          <h3>Data</h3>
+          <div className="skill-chip">PostgreSQL</div>
+          <div className="skill-chip">NoSQL</div>
+          <div className="skill-chip">Redis</div>
+        </div>
 
-                {/* Box 4: DevOps & Cloud */}
-                <div className="bento-item large">
-                    <h3>Cloud & Infrastructure</h3>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '15px' }}>
-                        <span style={{ color: '#4285F4', fontWeight: '700' }}>GCP</span>
-                        <span style={{ color: '#FF9900', fontWeight: '700' }}>AWS</span>
-                        <span style={{ color: '#2496ED', fontWeight: '700' }}>Docker</span>
-                        <span style={{ color: '#326CE5', fontWeight: '700' }}>K8s</span>
-                    </div>
-                    <p className="description">Optimizing CI/CD pipelines and managing containerized orchestrations.</p>
-                </div>
+        {/* Box 4: DevOps & Cloud */}
+        <div className="bento-item large">
+          <h3>Cloud & Infrastructure</h3>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', marginBottom: '15px' }}>
+            <span style={{ color: '#4285F4', fontWeight: '700' }}>GCP</span>
+            <span style={{ color: '#FF9900', fontWeight: '700' }}>AWS</span>
+            <span style={{ color: '#2496ED', fontWeight: '700' }}>Docker</span>
+            <span style={{ color: '#326CE5', fontWeight: '700' }}>K8s</span>
+          </div>
+          <p className="description">Optimizing CI/CD pipelines and managing containerized orchestrations.</p>
+        </div>
 
-                {/* Box 5: Automation */}
-                <div className="bento-item">
-                    <h3>Automation</h3>
-                    <p className="description">Selenium Expert</p>
-                    <div className="skill-chip" style={{ marginTop: '10px' }}>REST API Testing</div>
-                </div>
+        {/* Box 5: Automation */}
+        <div className="bento-item">
+          <h3>Automation</h3>
+          <p className="description">Selenium Expert</p>
+          <div className="skill-chip" style={{ marginTop: '10px' }}>REST API Testing</div>
+        </div>
 
-                {/* Box 6: Frontend */}
-                <div className="bento-item">
-                    <h3>Frontend</h3>
-                    <div className="skill-chip">Next.js</div>
-                    <div className="skill-chip">Angular</div>
-                </div>
-            </div>
-        </section>
-    );
+        {/* Box 6: Frontend */}
+        <div className="bento-item">
+          <h3>Frontend</h3>
+          <div className="skill-chip">Next.js</div>
+          <div className="skill-chip">Angular</div>
+        </div>
+      </div>
+    </section>
+  );
 }

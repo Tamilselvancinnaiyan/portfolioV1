@@ -3,36 +3,36 @@
 import React from "react";
 
 const EXP_DATA = [
-    {
-        year: "2025",
-        company: "DaivTech, Coimbatore",
-        role: "Software Engineer",
-        duration: "Jan 2025 — Present",
-        points: [
-            "Architected scalable SaaS backend systems with optimized database schemas.",
-            "Developed booking systems featuring complex slot management and transactional flows.",
-            "Integrated secure global payment orchestrations via Stripe and Razorpay.",
-            "Implemented real-time video connectivity using Zoom API integrations."
-        ]
-    },
-    {
-        year: "2022",
-        company: "Iamneo, Coimbatore",
-        role: "Software Engineer",
-        duration: "May 2022 — Jan 2025",
-        points: [
-            "Optimized result evaluation engines, drastically reducing error rates within 30 days.",
-            "Managed Dockerized full-stack environments using Kubernetes and Azure.",
-            "Built custom Chrome extensions for real-time exam integrity monitoring.",
-            "Developed biometric security modules including face liveness detection."
-        ]
-    }
+  {
+    year: "2025",
+    company: "DaivTech, Coimbatore",
+    role: "Software Engineer",
+    duration: "Jan 2025 — Present",
+    points: [
+      "Architected scalable SaaS backend systems with optimized database schemas.",
+      "Developed booking systems featuring complex slot management and transactional flows.",
+      "Integrated secure global payment orchestrations via Stripe and Razorpay.",
+      "Implemented real-time video connectivity using Zoom API integrations."
+    ]
+  },
+  {
+    year: "2022",
+    company: "Iamneo, Coimbatore",
+    role: "Software Engineer",
+    duration: "May 2022 — Jan 2025",
+    points: [
+      "Optimized result evaluation engines, drastically reducing error rates within 30 days.",
+      "Managed Dockerized full-stack environments using Kubernetes and Azure.",
+      "Built custom Chrome extensions for real-time exam integrity monitoring.",
+      "Developed biometric security modules including face liveness detection."
+    ]
+  }
 ];
 
 export default function Experience({ id }: { id: string }) {
-    return (
-        <section id={id} className="parallax-section">
-            <style>{`
+  return (
+    <section id={id} className="parallax-section">
+      <style>{`
         .parallax-section {
           padding: 100px 24px;
           max-width: 1100px;
@@ -56,7 +56,7 @@ export default function Experience({ id }: { id: string }) {
 
         .header-area span {
             color: transparent;
-            -webkit-text-stroke: 1px #ff0080;
+            -webkit-text-stroke: 1px var(--sky-cyan);
         }
 
         /* End of Header update */
@@ -94,7 +94,7 @@ export default function Experience({ id }: { id: string }) {
           width: 100%;
           height: 100%;
           color: transparent;
-          -webkit-text-stroke: 1px #ff0080;
+          -webkit-text-stroke: 1px var(--sky-cyan);
           mask-image: linear-gradient(
             to right,
             transparent 0%,
@@ -127,7 +127,7 @@ export default function Experience({ id }: { id: string }) {
         }
 
         .company-tag {
-          color: #ff0080;
+          color: var(--sky-cyan);
           font-size: 0.85rem;
           font-weight: 700;
           text-transform: uppercase;
@@ -168,7 +168,7 @@ export default function Experience({ id }: { id: string }) {
           top: 12px;
           width: 12px;
           height: 1px;
-          background: #7928ca;
+          background: var(--sky-primary);
         }
 
         .duration-text {
@@ -219,30 +219,30 @@ export default function Experience({ id }: { id: string }) {
         }
       `}</style>
 
-            <div className="header-area">
-                <h2>Professional <span>Experience</span></h2>
-            </div>
+      <div className="header-area">
+        <h2>Professional <span>Experience</span></h2>
+      </div>
 
-            <div className="exp-container">
-                {EXP_DATA.map((job, index) => (
-                    <div key={index} className={`exp-block ${index % 2 !== 0 ? 'reverse' : ''}`}>
-                        <div className="year-side" data-year={job.year}>{job.year}</div>
+      <div className="exp-container">
+        {EXP_DATA.map((job, index) => (
+          <div key={index} className={`exp-block ${index % 2 !== 0 ? 'reverse' : ''}`}>
+            <div className="year-side" data-year={job.year}>{job.year}</div>
 
-                        <div className="content-side">
-                            <div className="company-tag">
-                                {job.company}
-                                <span className="duration-text">// {job.duration}</span>
-                            </div>
-                            <h3 className="role-title">{job.role}</h3>
-                            <ul className="points-list">
-                                {job.points.map((point, i) => (
-                                    <li key={i}>{point}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
+            <div className="content-side">
+              <div className="company-tag">
+                {job.company}
+                <span className="duration-text">// {job.duration}</span>
+              </div>
+              <h3 className="role-title">{job.role}</h3>
+              <ul className="points-list">
+                {job.points.map((point, i) => (
+                  <li key={i}>{point}</li>
                 ))}
+              </ul>
             </div>
-        </section>
-    );
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }

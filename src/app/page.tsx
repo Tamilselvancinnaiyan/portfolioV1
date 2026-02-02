@@ -17,7 +17,8 @@ export default function Home() {
             Full-Stack Developer | Backend-Focused | Cloud & Scalable Systems
           </h2>
           <p className={styles.description}>
-            I design and build scalable, secure, and high-performance web applications.
+            I design and build scalable, secure, and high-performance web
+            applications.
           </p>
 
           <div className={styles.buttonGroup}>
@@ -34,7 +35,7 @@ export default function Home() {
       <Skills id="skills" />
       <Experience id="experience" />
       <ProjectExperience id="project-experience" />
-      <Projects id="projects" />
+      {/* <Projects id="projects" /> */}
       <Contact id="contact" />
     </div>
   );
